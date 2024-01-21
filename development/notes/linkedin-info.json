@@ -1,0 +1,66 @@
+{
+    "READABLE_info": {
+        "tagline": "I enjoy connecting over common passions, and welcome new opportunities for professional growth.",
+        "about": "I've engaged in client services in the financial sector and met the ethical and legal obligations of fiduciary responsibility. I've organized professional data through R Studio and programs in the Microsoft Office Suite in jobs with the City College of Berkeley and the University of California in Davis.",
+        "experience": [
+            {
+                "company": "UC Davis",
+                "position": "research assistant",
+                "description": "Research Assistant to Professor Lauren Young of the Political Science Department at UC Davis.",
+                "start_date": "Jan 2023",
+                "end_date": "Mar 2023",
+                "duration": "1 yr 3 mos",
+                "location": "Davis, CA",
+                "skills": [
+                    "full-stack development",
+                    "microsoft suite",
+                    "statistical data analysis",
+                    "analytical skills",
+                    "microsoft office", 
+                    "visual studio code", 
+                    "coding experience", 
+                    "python"
+                ]
+            },
+            {
+                "company": "Berkeley City College",
+                "position": "administrative assistant",
+                "description": "",
+                "start_date": "Jan 2020",
+                "end_date": "May 2022",
+                "duration": "2 yr 5 mos",
+                "location": "Berkeley, CA",
+                "skills": [
+                    "microsoft office",
+                    "adobe creative suite",
+                    "software as a service (SaaS)",
+                    "A++"
+                ]
+            },
+            {
+                "company": "Bank of America",
+                "position": "Customer Service Rep",
+                "description": "",
+                "start_date": "Mar 2017",
+                "end_date": "Jan 2018",
+                "duration": "11 mos",
+                "location": "West Virginia, US",
+                "skills": [
+                    "microsoft office",
+                    "client communication",
+                    "de-escalation",
+                    "client billing"
+                ]
+            }
+        ],
+        "other_skills": [
+            "crisis managament",
+            "operations management",
+            "law enforcement",
+            "data visualization",
+            "editing",
+            "written communication",
+            "legal writing"
+        ]
+    }
+}

@@ -1,0 +1,48 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+// Ensure content fills the viewport
+html {
+    width: 100%;
+    min-height: 100%;    
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+// Remove 
+body, header, footer, section, article, aside, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    font-weight: normal;
+}
+
+// Normalize list types {
+ul, ol, li {
+    list-style: none;
+}
+
+// Normalize anchor tags 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Ensure responsivity of media elements
+img, picture, svg, video, audio {
+    display: block;
+    max-width: 100%;
+    border: none;
+}
+
+// Reset form element styles
+button, input, select, textarea {
+    margin: 0;
+    border: none;
+    background: transparent;
+    font: inherit;
+    cursor: none;
+}
