@@ -191,7 +191,7 @@
             }
 
             a:hover {
-                @include transform(scale(125%, 125%));
+                @include transform(scale(1.25, 1.25));
             }
     
             @media screen and (max-width: 768px) {

@@ -39,7 +39,7 @@
 }
 @mixin filter($property) {
     -webkit-filter: $property;
-    -filter: $property;
+    filter: $property;
 }
 @mixin backdropFilter($property) {
     -webkit-backdrop-filter: $property;

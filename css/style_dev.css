@@ -626,11 +626,11 @@ transform: rotate(45deg);
   transition: transform 0.1s ease-in-out;
 }
 #hero #heroInfo #ctaButtons a:hover {
-  -webkit-transform: scale(125%, 125%);
-  -moz-transform: scale(125%, 125%);
-  -ms-transform: scale(125%, 125%);
-  -o-transform: scale(125%, 125%);
-  transform: scale(125%, 125%);
+  -webkit-transform: scale(1.25, 1.25);
+  -moz-transform: scale(1.25, 1.25);
+  -ms-transform: scale(1.25, 1.25);
+  -o-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
 }
 @media screen and (max-width: 768px) {
   #hero #heroInfo #ctaButtons {
@@ -713,7 +713,7 @@ main #exp article section.pos-title-card {
 main #exp article section.pos-title-card button {
   width: 6rem;
   -webkit-filter: drop-shadow(0.1rem 0.1rem #160e07);
-  -filter: drop-shadow(0.1rem 0.1rem #160e07);
+  filter: drop-shadow(0.1rem 0.1rem #160e07);
 }
 main #exp article section.pos-title-card button svg {
   fill: #d2dee6;
@@ -763,7 +763,7 @@ main #exp article section.pos-title-card div {
 main #exp article section.pos-title-card div svg {
   width: 2.5rem;
   -webkit-filter: drop-shadow(0.1rem 0.1rem #160e07);
-  -filter: drop-shadow(0.1rem 0.1rem #160e07);
+  filter: drop-shadow(0.1rem 0.1rem #160e07);
 }
 main #exp article section.exp-info {
   border-style: double;
