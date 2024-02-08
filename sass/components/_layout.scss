@@ -1,0 +1,422 @@
+.z-10 {
+    z-index: 10; // One level up
+}
+.z-20 {
+    z-index: 20;
+}
+.z-30 {
+    z-index: 30;
+}
+.z-40 {
+    z-index: 40;
+}
+.flex {
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;     /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex;         /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.grid {
+    display: -ms-grid; /* TWEENER - IE 10 */ 
+    display: grid;     /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "contact";
+}
+
+#hero {
+    grid-area: header;
+    position: relative;
+
+    #heroBackground {
+        position: relative;
+        width: 100%;
+        height: 95vh; // 95vh
+        overflow: hidden;
+    
+        #skyline {
+            width: 100%;
+            height: 100%;
+            @include objectFit(cover);
+            @include objectPosition(80% center);
+        }
+        
+        #heroShade {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        #heroMan {
+            position: absolute;
+            bottom: 0;
+            right: -6rem; 
+            max-height: 100%;
+            max-width: 55rem;
+        
+            @media screen and (min-width: 769px) {
+                right: 0;
+            }
+
+            @media screen and (max-width: 768px) and (min-height: 769px) {
+                right: -12.5rem;
+            }
+
+            @media screen and (min-width: 769px) and (min-height: 705px) {
+                right: -12.5rem;
+            }
+        }
+    }
+    
+    #heroInfo {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: $gridColumns-12;
+        
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "subtitle subtitle subtitle subtitle subtitle subtitle . . . . man man"
+            "buttons buttons buttons buttons buttons buttons buttons buttons buttons buttons buttons buttons"
+            "nav nav nav nav nav nav nav nav nav nav logo logo";
+
+        @media screen and (min-width: 769px) {
+            grid-template-areas: 
+            ". . . nav nav nav . . . . . ."
+            ". logo logo title title title title title . man man man"
+            ". . . subtitle subtitle subtitle subtitle subtitle . man man man"
+            ". . . buttons buttons buttons buttons . . man man man";
+        } 
+    
+        nav {
+            grid-area: nav;
+    
+            ul {
+                width: 100%;
+                @include justifyContent(space-between);
+                @include alignItems(center);
+                gap: 0.75rem;
+                text-wrap: nowrap;
+                color: $silver;
+                @include transition(color 0.3s ease-in-out);
+    
+                @media screen and (max-width: 512px) {
+                    background-color: rgba(22,14,7,.7);
+                    padding-inline: 1rem;
+                    margin: auto 1rem;
+                    height: 25%;
+        
+                    @supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
+                        backdrop-filter: blur(1rem);
+                    }
+                }
+
+                @media  screen and (min-width: 513px) and (max-width: 768px) {
+                    @include justifyContent(space-around);
+                }
+                
+                li {
+                    @media screen and (min-width: 513px) and (max-width: 768px) {
+                        background-color: rgba(22,14,7,.7);
+                        padding: 0.5rem;
+                        margin: auto 1rem; 
+
+                        @supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
+                            backdrop-filter: blur(1rem);
+                        }
+                    }
+                }
+
+                li:hover {
+                    color: $gold;
+                    @include transition(color 0.3s ease-in-out);
+                }
+            }
+        }
+    
+        #logo {
+            grid-area: logo;
+            width: 100%;
+            padding-inline: 1rem;
+            margin-block: auto;
+    
+            @media screen and (max-width: 768px) {
+                padding-inline: 0;
+                @include paddingInlineEnd(0.5rem);
+            }
+        }
+    
+        #title {
+            grid-area: title;
+            line-height: 0.7;
+            margin-block: auto;
+            text-shadow: 0.25rem 0.25rem 0.2rem $blue;
+    
+            @media screen and (max-width: 768px) {
+                @include paddingInlineStart(1rem);
+            }
+        }
+    
+        #subTitle {
+            grid-area: subtitle;
+            line-height: 1.5;
+    
+            @media screen and (max-width: 768px) {
+                @include paddingInlineStart(1rem);
+                margin-block: auto;
+            }
+        }
+    
+        #ctaButtons {
+            grid-area: buttons;
+            gap: 2rem;
+            @include alignItems(flex-start);
+            font-family: $news-font;
+    
+            a {   
+                padding-inline: 0.5rem;
+                border-radius: 10rem;
+                @include boxShadow(0.25rem 0.25rem 0.2rem $darkChocolate);
+                text-wrap: nowrap;
+                @include transition(transform 0.1s ease-in-out);
+            }
+
+            a:hover {
+                @include transform(scale(125%, 125%));
+            }
+    
+            @media screen and (max-width: 768px) {
+                margin: auto 1rem;
+            }
+        }
+    }
+}
+
+
+main { 
+    grid-area: main; 
+
+    #myStory {
+        @include flexDirection(column);
+        @include justifyContent(center);
+        @include alignItems(center);
+        gap: 1rem;
+        padding: 8rem 1rem;
+
+        @media screen and (min-width: 769px) and (max-width: 1600px) {
+            @include flexDirection(row);
+            padding: 8rem 5rem;
+        }
+
+        @media screen and (min-width: 1601px) {
+            @include flexDirection(row);
+            padding: 8rem 15rem;
+        }
+        
+        img {
+            border: 0.25rem solid $blue;
+            border-radius: 2.5rem;
+            width: clamp(15rem, 8.2710rem + 28.0374vw, 30rem);
+
+            @media screen and (min-width: 769px) {
+                @include alignSelf(flex-start);
+                position: sticky;
+                top: 1rem;
+            }
+        }
+
+        div > p { 
+            line-height: 1.5;
+            @include paddingBlockStart(1rem);
+            max-width: 80ch;
+        }
+    }
+
+    #exp {
+        padding: 10rem 1rem;
+        background: 
+            radial-gradient(circle at 0% 100%, rgba(0,124,178,0.8), rgba(0,42,60,0.5) 66.67%, rgba(210,222,230,0.2) 83.33%), 
+            radial-gradient(circle at 100% 0%, rgba(0,124,178,0.8), rgba(0,42,60,0.8) 66.67%, rgba(210,222,230,0.2) 83.33%);
+
+        article {
+            @include flexDirection(column);
+            @include alignItems(center);
+            
+            section.pos-title-card {
+                @include justifyContent(center);
+                
+                button {
+                    width: 6rem;
+                    @include filter(drop-shadow(0.10rem 0.1rem $darkChocolate));
+                    
+                    svg {
+                        fill: $silver;
+                        @include transition(fill 0.3s ease-in-out);
+                    }
+                }
+
+                @media screen and (pointer: fine) {
+                    button:hover {
+                        svg {
+                                fill: $gold;
+                            }
+                    }
+                }
+
+                @media screen and (pointer: coarse) {
+                    button:active {
+                        svg {
+                            fill: $gold;
+                            @include transform(scale(1.25, 1.25));
+                        }
+                    }
+                }
+
+                .pos-title-name-container {
+                    width: 45ch;
+
+                    h2 {
+                        padding: 1.5rem 3rem;
+                        text-align: center;
+                        @include expBorder;
+                        background-color: $blue-shade-3;
+                        @include boxShadow(0.1rem 0.1rem $darkChocolate);
+                    }
+                }
+
+                div {
+                    @include flexDirection(column);
+                    @include justifyContent(space-between);
+
+                    svg {
+                        width: 2.5rem; 
+                        @include filter(drop-shadow(0.10rem 0.1rem $darkChocolate));
+                    }
+                }  
+            }
+
+            section.exp-info {
+                @include expBorder;
+                border-radius: 2.5rem;
+                padding: 3.5rem;
+                line-height: 2;
+                background-color: $blue-shade-3;
+                @include boxShadow(0.1rem 0.1rem $darkChocolate);
+
+                @media screen and (min-width: 641px) {
+                    max-width: 80ch;
+                }
+
+                #skills {
+                    padding-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+#contact { 
+    grid-area: contact; 
+    display: grid;
+    gap: 2rem;
+    padding-block: 5rem;
+    line-height: 2;
+
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "hireMe"
+        "findMe"
+        "credit";
+
+    @media screen and (min-width: 769px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "hireMe findMe"
+            "credit .";
+    }
+
+    #hireMe {
+        grid-area: hireMe;
+        text-align: right;
+        @include justifyContent(space-between);
+
+        @media screen and (max-width: 768px) {
+            text-align: center;
+        }
+
+        a.flex, div.flex {
+            @include alignItems(center);
+            @include justifyContent(flex-end);
+            gap: 1rem;
+
+            @media screen and (max-width: 768px) {
+                @include justifyContent(center);
+            }
+        }
+
+        a:hover h3 {
+            color: $gold;
+        }
+
+        svg#phone {
+            width: 2rem;
+            aspect-ratio: 1 / 0.75;           
+        }
+
+        svg#envelope {
+            width: 1.75rem;
+        }
+    }
+
+    #hireMe:hover #phone {
+        @include animation(vibrate 0.8s infinite);
+    }
+
+    #fme {
+        grid-area: findMe;
+        @include flexDirection(column);
+        @include justifyContent(space-between);
+
+        @media screen and (max-width: 768px) {
+            @include alignItems(center);
+        }
+
+        svg#linkedInLogo {
+            width: 3.75rem;
+        }
+    }
+    
+    #credit {
+        grid-area: credit;
+        text-align: right;
+
+        h3 {
+            span {
+                color: $white;
+
+                @media  screen and (max-width: 768px) {
+                    color: $gold;
+                }
+            }
+            
+           
+        }
+
+        @media screen and (max-width: 768px) {
+            text-align: center;
+        }
+    }
+
+    #credit:hover span {
+        color: $gold;
+    }
+}

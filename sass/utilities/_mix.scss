@@ -1,0 +1,138 @@
+/* 
+.example {
+    @include transform(rotate(45deg));
+    @include transition(transform 0.3s ease-in)
+}
+*/
+
+/* Vendor prefix mixins */
+// Margin & padding properties
+@mixin boxSizing($property) {
+    -webkit-box-sizing: $property;
+    box-sizing: $property;
+}
+@mixin paddingInlineStart($property) {
+    -webkit-padding-start: $property;
+    padding-inline-start: $property;
+}
+@mixin paddingInlineEnd($property) {
+    -webkit-padding-end: $property;
+    padding-inline-end: $property;
+}
+@mixin paddingBlockStart($property) {
+    -webkit-padding-before: $property;
+    padding-block-start: $property;
+}
+@mixin paddingBlockEnd($property) {
+    -webkit-padding-after: $property;
+    padding-block-end: $property;
+}
+
+// Image properties
+@mixin objectFit($property) {
+    -o-object-fit: $property;
+    object-fit: $property;
+}
+@mixin objectPosition($property) {
+    -o-object-position: $property;
+    object-position: $property;
+}
+@mixin filter($property) {
+    -webkit-filter: $property;
+    -filter: $property;
+}
+@mixin backdropFilter($property) {
+    -webkit-backdrop-filter: $property;
+    backdrop-filter: $property;
+}
+
+// Flexbox properties
+@mixin justifyContent($property) {
+    $backup: center;
+
+    @if $property == 'flex-start' {
+      $backup: start;
+    } @else if $property == 'flex-end' {
+      $backup: end;
+    } @else if $property == 'space-between' or $property == 'space-evenly' {
+      $backup: justify;
+    } @else if $property == 'space-around' {
+      $backup: distribute;
+    }
+    -webkit-box-pack: $backup;
+    -ms-flex-pack: $backup;
+    justify-content: $property;
+}
+@mixin alignItems($property) {
+    $backup: stretch;
+
+    @if $property == 'flex-start' {
+      $backup: start;
+    } @else if $property == 'flex-end' {
+      $backup: end;
+    } @else if $property == 'center' {
+      $backup: center;
+    } @else if $property == 'baseline' {
+      $backup: baseline;
+    }
+    
+    -webkit-box-align: $backup;
+    -ms-flex-align: $backup;
+    align-items: $property;
+}
+@mixin alignSelf($property) {
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+@mixin flexDirection($property) {
+    @if $property == 'row' {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+    } @else if $property == 'column' {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+    }
+
+    -ms-flex-direction: $property;
+    flex-direction: $property;
+}
+
+// Accent properties
+@mixin boxShadow($property) {
+    -webkit-box-shadow: $property;
+    box-shadow: $property;
+}
+
+// Animation properties 
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+    transform: $property;
+}
+@mixin transition($property) {
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    -ms-transition: $property;
+    -o-transition: $property;
+    transition: $property;
+}
+@mixin animation($property) {
+    -webkit-animation: $property;
+    -moz-animation: $property;
+    -ms-animation: $property;
+    -o-animation: $property;
+    animation: $property;
+}
+@mixin animationDelay($property) {
+    -webkit-animation-delay: $property;
+    animation-delay: $property;
+}
+
+// Custom mixins
+@mixin expBorder {
+    border-style: double;
+    border-width: 0.25rem;
+    border-color: $silver;
+}

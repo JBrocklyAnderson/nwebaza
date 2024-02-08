@@ -1,0 +1,56 @@
+.bg-silver {
+    background-color: $silver;
+}
+.bg-blue {
+    background-color: $blue;
+}
+.bg-gold {
+    background-color: $gold;
+}
+.bg-dark-chocolate {
+    background-color: $darkChocolate;
+}
+.opacity-70 {
+    opacity: 0.7;
+}
+.f-none {
+    fill: none;
+}
+.f-silver {
+    fill: $silver;
+}
+.f-blue {
+    fill: $blue;
+}
+.f-dark-chocolate {
+    fill: $darkChocolate;
+
+    @media screen and (max-width: 769px) {
+        fill: $blue;
+    }
+}
+.f-gold {
+    fill: $gold;
+}
+.str-dark-chocolate {
+    stroke: $darkChocolate;
+
+    @media screen and (max-width: 769px) {
+        stroke: $blue;
+    }
+}
+.str-gold {
+    stroke: $gold;
+}
+.str-silver {
+    stroke: $silver;
+}
+.str-width-1 {
+    stroke-width: 1;
+}
+.str-width-2 {
+    stroke-width: 2;
+}
+.str-width-5 {
+    stroke-width: 5;
+}
