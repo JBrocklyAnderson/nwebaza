@@ -1,8 +1,8 @@
-# Joseph Brockly-Anderson — Portfolio Website
-Welcome to the repository for my personal portfolio website! This site showcases my work as a web and graphic designer, web developer, data analyst, software engineer, and well-rounded daredevil.
+# Nicholas Webaza's Portfolio Website
+Welcome to the repository for Nicholas Webaza's professional portfolio website! This site showcases his work as an advocate for justice and an expert in politico-legal analysis. 
 
 ## Overview
-This portfolio is designed to provide insight into my professional journey, highlight key projects and achievements, and serve as a platform for professional growth and collaboration.
+This portfolio is designed to provide insight into Mr. Webaza's professional journey, highlight key projects and achievements, and serve as a platform for professional growth and collaboration.
 - **Website URL:** [https://jbrockly.github.io/nwebaza/](https://jbrocklyanderson.github.io/nwebaza/)
 - **Author:** Joseph Brockly-Anderson / 红云海
 
