@@ -118,7 +118,13 @@ const infoSection = document.querySelector('.exp-info');
 
 // Function to update article content
 document.addEventListener('DOMContentLoaded', () => {
-    ANIMATION_DURATION = 500;
+    //// Add current year to acknowledgements
+    const currentYear = new Date().getFullYear();
+    const currentYearSpan = document.querySelector('#currentYear');
+    currentYearSpan.textContent = currentYear;
+    
+    //// Handle carousel functionality
+    const ANIMATION_DURATION = 500;
     
     function addAnimation(element, removeClass, addClass) {
         element.classList.remove(removeClass);
@@ -153,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, ANIMATION_DURATION);
     }
 
-
     // Initialize the carousel
     updatePosition(0, 'next');
 
@@ -167,10 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPosition = (currentPosition + 1) % workPositions.length;
         updatePosition(currentPosition, 'next');
     });
-});
 
-// Add intersection obersvers for viewport scrolling
-document.addEventListener('DOMContentLoaded', function() {
+    //// Configure intersection observer
     const observerOptions = {
         root: null, // Use the viewport as bounding box
         rootMargin: '0px' // Trigger the intersection at the bottom of the page
@@ -186,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     entry.target.style.setProperty('--delay', delay);
                     entry.target.classList.add(animationType);
                 }
-                // observer.unobserve(entry.target) // Optional
+
             }
         });
     };
@@ -236,11 +239,3 @@ document.addEventListener('DOMContentLoaded', function() {
         if (element) mainObserver.observe(element);
     });
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const currentYear = new Date().getFullYear();
-    const currentYearSpan = document.querySelector('#currentYear');
-
-    currentYearSpan.textContent = currentYear;
-});
-
