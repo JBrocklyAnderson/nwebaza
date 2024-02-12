@@ -235,56 +235,12 @@ document.addEventListener('DOMContentLoaded', function() {
     animatedElements.forEach(element => {
         if (element) mainObserver.observe(element);
     });
+});
 
-        /* Old code; each observer added a single manually-defined class and individually set it's config options
-    const slideUpObserver = new IntersectionObserver(observerCallback, observerOptions);
-    const slideInFromLeftObserver = new IntersectionObserver(observerCallback, observerOptions);
-    const slideInFromRightObserver = new IntersectionObserver(observerCallback, observerOptions);
-    
-    // Add intersection observer functions
-    const slideUpObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('slide-up');
-                console.log("added");
-            }
-        });
-    }, {
-        root: null, // Use the viewport as bounding box
-        rootMargin: '0px', // Trigger the intersection at the bottom of the page
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    const currentYear = new Date().getFullYear();
+    const currentYearSpan = document.querySelector('#currentYear');
 
-    const slideInFromRightObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('slide-in-from-right');
-            }
-        });
-    }, {
-        root: null,
-        rootMargin: '0px',
-    }); 
-
-    const slideInFromLeftObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('slide-in-from-left');
-            }
-        });
-    }, {
-        root: null,
-        rootMargin: '0px',
-    }); 
-
-    const superSizeDownObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('super-size-down');
-            }
-        });
-    }, {
-        root: null,
-        rootMargin: '0px',
-    }); */
+    currentYearSpan.textContent = currentYear;
 });
 
